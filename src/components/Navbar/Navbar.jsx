@@ -49,7 +49,7 @@ export default function Navbar() {
                         </NavLink>
                     </li>
                     <li className="nav-item cta">
-                        <a href="/resume.pdf" download className="btn-small">Resume</a>
+                        <NavLink to="/resume" className="btn-small" onClick={() => setIsOpen(false)}>Resume</NavLink>
                     </li>
                     <li className="nav-item theme-toggle-li">
                         <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">

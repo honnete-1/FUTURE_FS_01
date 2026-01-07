@@ -1,0 +1,129 @@
+.resume-section {
+    padding-top: 100px;
+    /* Space for Navbar */
+    padding-bottom: 60px;
+    background-color: var(--bg-secondary);
+    min-height: 100vh;
+}
+
+.resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.resume-header {
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.resume-name {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.resume-contact {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.resume-heading {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+.resume-text {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.resume-item {
+    margin-bottom: 20px;
+}
+
+.resume-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.resume-item-header strong {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.resume-item-header span {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.resume-sub {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.resume-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.resume-list li {
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skills-columns ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.skills-columns li {
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.btn-download {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .resume-item-header {
+        flex-direction: column;
+    }
+
+    .skills-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-container {
+        padding: 20px;
+    }
+}
