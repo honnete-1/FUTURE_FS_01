@@ -1,0 +1,73 @@
+.about-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-primary);
+    transition: background-color 0.5s ease;
+}
+
+.about-intro {
+    margin-bottom: var(--spacing-md);
+}
+
+.about-slogan {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.bcl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.bcl-card {
+    background: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Light mode "pop" effect */
+[data-theme='light'] .bcl-card {
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.bcl-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--accent-color);
+}
+
+.bcl-card::before {
+    content: attr(data-letter);
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    opacity: 0.05;
+    font-family: var(--font-heading);
+}
+
+.bcl-card h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--accent-color);
+    position: relative;
+    z-index: 1;
+}
+
+.bcl-card p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}

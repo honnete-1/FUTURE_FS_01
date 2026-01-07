@@ -1,0 +1,71 @@
+:root {
+  /* Common */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  --container-width: 1200px;
+  --nav-height: 80px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* User requested vintage dark grey */
+  --color-vintage-grey: #737270;
+}
+
+/* Light Mode (White/Clean) */
+[data-theme='light'] {
+  --bg-primary: #FDFDFD;
+  /* Off-white */
+  --bg-secondary: #F0F0F0;
+  --text-primary: #0F172A;
+  /* Deep Navy */
+  --text-secondary: #334155;
+  --card-bg: #FFFFFF;
+  /* Pure White */
+  --accent-color: #06b6d4;
+  /* Darker/Readable Cyan for light bg */
+  --accent-hover: #0891b2;
+  --border-color: #E2E8F0;
+
+  /* Footer override for Light Mode if needed, or keep unified */
+  --footer-bg: #0F172A;
+  --footer-text: #F4F4F4;
+
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+/* Dark Mode (Deep Navy - Default Preference) */
+[data-theme='dark'] {
+  --bg-primary: #0F172A;
+  /* Deep Navy */
+  --bg-secondary: #1E293B;
+  /* Slightly lighter navy/slate */
+  --text-primary: #F4F4F4;
+  /* Light Gray */
+  --text-secondary: #94A3B8;
+  /* Slate Gray */
+  --card-bg: #1E293B;
+  /* Slate Gray / Soft Charcoal */
+  --accent-color: #22D3EE;
+  /* Neon Cyan */
+  --accent-hover: #67E8F9;
+  --border-color: #334155;
+  /* Slight lighter grey */
+
+  /* Footer - align with theme (Secondary BG) */
+  --footer-bg: #0F172A;
+  --footer-text: #F4F4F4;
+
+  --shadow-sm: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  --shadow-md: 8px 8px 0px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(34, 211, 238, 0.4);
+}

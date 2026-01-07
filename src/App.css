@@ -1,0 +1,272 @@
+/* App.css
+   Purpose: page-level layout + shared UI styles (buttons, sections)
+   Not for global resets (those belong in index.css)
+*/
+
+#root {
+  /* Keep a readable page width and center the entire app */
+  max-width: 960px;
+  margin: 0 auto;
+
+  /* Page padding so content doesn't touch edges */
+  padding: 64px 16px;
+
+  /* Remove demo centering: we want a professional left-aligned layout */
+  text-align: left;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  /* hero section spacing */
+  margin-top: 20px;
+}
+
+.hero__tag {
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero__title {
+  font-size: 56px;
+  margin: 10px 0;
+  line-height: 1.1;
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-top: 12px;
+}
+
+/* CTA buttons container */
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+/* Shared button style */
+.btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #111;
+  text-decoration: none;
+  color: #111;
+  display: inline-block;
+}
+
+.btn--primary {
+  background: #111;
+  color: white;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 600px) {
+  #root {
+    padding: 40px 14px;
+  }
+
+  .hero__title {
+    font-size: 40px;
+  }
+}
+.section {
+  margin-top: 80px;
+}
+
+.section__title {
+  font-size: 28px;
+  margin: 0;
+}
+
+.section__subtitle {
+  margin-top: 10px;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+.projects__grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+}
+.projects__grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.project-card__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.project-card__desc {
+  margin-top: 10px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.project-card__tech {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.badge {
+  font-size: 12px;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.link {
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  color: #111;
+}
+
+@media (max-width: 700px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about__grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about__card {
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.about__cardTitle {
+  margin: 0;
+  font-size: 18px;
+}
+
+.about__text {
+  margin-top: 10px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.about__list {
+  margin-top: 12px;
+  padding-left: 18px;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills__grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skills__card {
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.skills__cardTitle {
+  margin: 0;
+  font-size: 18px;
+}
+
+.skills__list {
+  margin-top: 12px;
+  padding-left: 18px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.contact__card {
+  margin-top: 24px;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.contact__text {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.contact__link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  color: #111;
+}
+
+.contact__links {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.footer {
+  margin-top: 80px;
+  padding: 24px 2rem;
+  border-top: 1px solid #e6e6e6;
+  text-align: center;
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer__link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #111;
+  opacity: 0.8;
+}
+
+.footer__link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

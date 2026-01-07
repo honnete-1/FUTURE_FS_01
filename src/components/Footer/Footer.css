@@ -1,0 +1,57 @@
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
+}
+
+.footer-brand h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--footer-text);
+}
+
+.footer-brand p {
+    color: var(--text-secondary);
+    /* This might be dark on dark bg, let's override */
+    color: #ccc;
+}
+
+.footer-socials {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: var(--footer-text);
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.heart-icon {
+    color: var(--accent-color);
+    display: inline-block;
+    vertical-align: middle;
+}

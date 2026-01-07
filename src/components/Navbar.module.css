@@ -1,0 +1,55 @@
+.nav {
+  background: red;
+}
+.nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #e6e6e6;
+  z-index: 20;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
+  letter-spacing: 0.2px;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #111;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+@media (max-width: 700px) {
+  .links {
+    gap: 12px;
+  }
+
+  .inner {
+    padding: 12px 1rem;
+  }
+}
