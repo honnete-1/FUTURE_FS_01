@@ -10,8 +10,8 @@ export default function ProjectCard({ project }) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
         >
-            <div className="project-image-placeholder">
-                <span>{project.title}</span>
+            <div className="project-image-wrapper">
+                <img src={project.image} alt={project.title} className="project-image" />
             </div>
 
             <div className="project-content">

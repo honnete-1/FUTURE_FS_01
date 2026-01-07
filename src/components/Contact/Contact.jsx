@@ -1,22 +1,49 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 export default function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [status, setStatus] = useState({ type: '', msg: '' });
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert("Thanks for reaching out! This is a demo form.");
+        setStatus({ type: 'info', msg: 'Sending...' });
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                setStatus({ type: 'success', msg: 'Message sent successfully!' });
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setStatus({ type: 'error', msg: data.message || 'Error sending message.' });
+            }
+        } catch (err) {
+            console.error(err);
+            setStatus({ type: 'error', msg: 'Server error. Please try again later.' });
+        }
     };
 
     return (
         <section className="section contact-section" id="contact">
+            <Helmet>
+                <title>Contact - Honnête</title>
+                <meta name="description" content="Get in touch with Honnête for internships and collaborations." />
+            </Helmet>
+
             <div className="container contact-container">
                 <div className="contact-info">
                     <h2 className="section-title">Let's Connect<span className="dot">.</span></h2>
@@ -77,6 +104,17 @@ export default function Contact() {
                             required
                         ></textarea>
                     </div>
+
+                    {status.msg && (
+                        <p style={{
+                            marginBottom: '1rem',
+                            color: status.type === 'error' ? '#ef4444' : '#22d3ee',
+                            fontWeight: 'bold'
+                        }}>
+                            {status.msg}
+                        </p>
+                    )}
+
                     <button type="submit" className="btn btn-submit">
                         Send Message <FaPaperPlane />
                     </button>

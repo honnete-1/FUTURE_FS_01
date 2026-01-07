@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
@@ -20,6 +21,10 @@ export default function App() {
   return (
     <Router>
       <div className="app-container">
+        <Helmet>
+          <title>Honnete - Full Stack Portfolio</title>
+          <meta name="description" content="Professional portfolio of a Full Stack Developer specializing in React and Node.js." />
+        </Helmet>
         <Navbar />
         <main>
           <Routes>

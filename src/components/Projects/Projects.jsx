@@ -1,55 +1,55 @@
+import { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import './Projects.css';
 
 export default function Projects() {
-    const projects = [
-        {
-            title: "Submission Reminder App",
-            description: "A tool to track and remind users of submission deadlines.",
-            tech: ["Shell Scripting", "Automation"],
-            liveLink: "#", // No live link provided, preventing broken link
-            codeLink: "https://github.com/honnete-1/submission_reminder_app_honnete-1",
-        },
-        {
-            title: "Personal Expense Tracker",
-            description: "A Python application to manage and track personal finances.",
-            tech: ["Python", "Data Management"],
-            liveLink: "#",
-            codeLink: "https://github.com/honnete-1/Lab3-Personal-Expense-Tracker_honnete-1",
-        },
-        {
-            title: "Professional Portfolio",
-            description: "This responsive, accessible portfolio website built with React.",
-            tech: ["React", "CSS Variables", "Framer Motion"],
-            liveLink: "#",
-            codeLink: "#", // Current repo
-        },
-        {
-            title: "Mini Shop",
-            description: "Upcoming full stack development project.",
-            tech: ["In Development"],
-            liveLink: "#",
-            codeLink: "https://github.com/honnete-1/FUTURE_FS_02",
-        },
-        {
-            title: "Rebranded Website",
-            description: "Upcoming software solution.",
-            tech: ["In Development"],
-            liveLink: "#",
-            codeLink: "https://github.com/honnete-1/FUTURE_FS_03",
-        },
-    ];
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Fetch projects from Backend API
+        fetch('/api/projects')
+            .then(res => {
+                if (!res.ok) throw new Error("Failed to fetch");
+                return res.json();
+            })
+            .then(data => {
+                // Map DB keys to Component keys
+                const mapped = data.map(p => ({
+                    title: p.title,
+                    description: p.description,
+                    tech: typeof p.tech_stack === 'string' ? JSON.parse(p.tech_stack) : p.tech_stack,
+                    codeLink: p.link,
+                    liveLink: '#', // Default fallback
+                    image: p.image_url
+                }));
+                setProjects(mapped);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Error fetching projects:", err);
+                setLoading(false);
+            });
+    }, []);
 
     return (
         <section className="section projects-section" id="projects">
             <div className="container">
                 <h2 className="section-title">Selected Work<span className="dot">.</span></h2>
 
-                <div className="projects-grid">
-                    {projects.map((p, index) => (
-                        <ProjectCard key={index} project={p} />
-                    ))}
-                </div>
+                {loading ? (
+                    <p>Loading projects...</p>
+                ) : (
+                    <div className="projects-grid">
+                        {projects.length > 0 ? (
+                            projects.map((p, index) => (
+                                <ProjectCard key={index} project={p} />
+                            ))
+                        ) : (
+                            <p>No projects found (Make sure backend is running).</p>
+                        )}
+                    </div>
+                )}
             </div>
         </section>
     );
