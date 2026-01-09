@@ -37,6 +37,7 @@ export default function Projects() {
         <section className="section projects-section" id="projects">
             <div className="container">
                 <h2 className="section-title">Selected Work<span className="dot">.</span></h2>
+                <p style={{ background: '#333', padding: '10px', color: 'orange' }}>DEBUG URL: {import.meta.env.VITE_API_BASE_URL || "NOT SET"}</p>
 
                 {loading ? (
                     <p>Loading projects...</p>
