@@ -45,6 +45,14 @@ export default function Projects() {
             <div className="container">
                 <h2 className="section-title">Selected Work<span className="dot">.</span></h2>
 
+                {error && (
+                    <div style={{ color: 'red', background: '#ffe6e6', padding: '10px', margin: '20px 0', borderRadius: '5px' }}>
+                        <strong>Error loading projects:</strong> {error}
+                        <br />
+                        <small>Check console for details.</small>
+                    </div>
+                )}
+
                 {loading ? (
                     <p>Loading projects...</p>
                 ) : (
