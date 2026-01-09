@@ -3,25 +3,29 @@ import ProjectCard from './ProjectCard';
 import './Projects.css';
 
 export default function Projects() {
-    const [projects, setProjects] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         // Fetch projects from Backend API
-        const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+        let apiBase = import.meta.env.VITE_API_BASE_URL || '';
+        // Remove trailing slash if present to avoid double slashes
+        if (apiBase.endsWith('/')) {
+            apiBase = apiBase.slice(0, -1);
+        }
+
         fetch(`${apiBase}/api/projects`)
             .then(res => {
-                if (!res.ok) throw new Error("Failed to fetch");
+                if (!res.ok) throw new Error(`Fetch failed: ${res.statusText} (${res.status})`);
                 return res.json();
             })
             .then(data => {
-                // Map DB keys to Component keys
+                // ... mapping code ...
                 const mapped = data.map(p => ({
                     title: p.title,
                     description: p.description,
                     tech: typeof p.tech_stack === 'string' ? JSON.parse(p.tech_stack) : p.tech_stack,
                     codeLink: p.link,
-                    liveLink: '#', // Default fallback
+                    liveLink: '#',
                     image: p.image_url
                 }));
                 setProjects(mapped);
@@ -29,6 +33,7 @@ export default function Projects() {
             })
             .catch(err => {
                 console.error("Error fetching projects:", err);
+                setError(err.message);
                 setLoading(false);
             });
     }, []);
@@ -37,7 +42,15 @@ export default function Projects() {
         <section className="section projects-section" id="projects">
             <div className="container">
                 <h2 className="section-title">Selected Work<span className="dot">.</span></h2>
-                <p style={{ background: '#333', padding: '10px', color: 'orange' }}>DEBUG URL: {import.meta.env.VITE_API_BASE_URL || "NOT SET"}</p>
+                <p style={{ background: '#333', padding: '10px', color: 'orange' }}>
+                    DEBUG URL: {import.meta.env.VITE_API_BASE_URL || "NOT SET"}
+                </p>
+
+                {error && (
+                    <div style={{ color: 'red', background: '#ffe6e6', padding: '10px', margin: '10px 0' }}>
+                        <strong>ERROR:</strong> {error}
+                    </div>
+                )}
 
                 {loading ? (
                     <p>Loading projects...</p>
@@ -48,7 +61,7 @@ export default function Projects() {
                                 <ProjectCard key={index} project={p} />
                             ))
                         ) : (
-                            <p>No projects found (Make sure backend is running).</p>
+                            !error && <p>No projects found (Database returned empty list).</p>
                         )}
                     </div>
                 )}
