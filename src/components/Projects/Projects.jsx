@@ -18,6 +18,10 @@ export default function Projects() {
         fetch(`${apiBase}/api/projects`)
             .then(res => {
                 if (!res.ok) throw new Error(`Fetch failed: ${res.statusText} (${res.status})`);
+                const contentType = res.headers.get("content-type");
+                if (contentType && contentType.includes("text/html")) {
+                    throw new Error("Received HTML instead of JSON. This means the API URL is wrong (likely pointing to Frontend instead of Backend). Check VITE_API_BASE_URL.");
+                }
                 return res.json();
             })
             .then(data => {
