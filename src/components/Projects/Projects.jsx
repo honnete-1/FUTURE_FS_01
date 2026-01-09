@@ -3,6 +3,8 @@ import ProjectCard from './ProjectCard';
 import './Projects.css';
 
 export default function Projects() {
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
