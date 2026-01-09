@@ -8,7 +8,8 @@ export default function Projects() {
 
     useEffect(() => {
         // Fetch projects from Backend API
-        fetch('/api/projects')
+        const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+        fetch(`${apiBase}/api/projects`)
             .then(res => {
                 if (!res.ok) throw new Error("Failed to fetch");
                 return res.json();

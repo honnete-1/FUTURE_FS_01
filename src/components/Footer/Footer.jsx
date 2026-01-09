@@ -11,8 +11,8 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-socials">
-                    <a href="https://github.com" target="_blank" rel="noreferrer" className="social-link"><FaGithub /></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-link"><FaLinkedin /></a>
+                    <a href="https://github.com/honnete-1" target="_blank" rel="noreferrer" className="social-link"><FaGithub /></a>
+                    <a href="https://www.linkedin.com/in/honnete-nishimwe-693087237/" target="_blank" rel="noreferrer" className="social-link"><FaLinkedin /></a>
                     <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-link"><FaTwitter /></a>
                 </div>
 

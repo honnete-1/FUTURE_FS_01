@@ -17,7 +17,8 @@ export default function Contact() {
         setStatus({ type: 'info', msg: 'Sending...' });
 
         try {
-            const res = await fetch('/api/contact', {
+            const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+            const res = await fetch(`${apiBase}/api/contact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -33,7 +34,7 @@ export default function Contact() {
             }
         } catch (err) {
             console.error(err);
-            setStatus({ type: 'error', msg: 'Server error. Please try again later.' });
+            setStatus({ type: 'error', msg: `Server error: ${err.message}. Check console.` });
         }
     };
 
