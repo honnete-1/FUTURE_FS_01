@@ -6,6 +6,6 @@ exports.getProjects = async (req, res) => {
         res.json(rows);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Server Error fetching projects' });
+        res.status(500).json({ message: 'Server Error fetching projects', error: err.message, stack: err.stack });
     }
 };
