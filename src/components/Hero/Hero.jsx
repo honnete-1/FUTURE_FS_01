@@ -28,7 +28,7 @@ export default function Hero() {
                     {/* Bio */}
                     <p className="hero-bio">
                         Hi, I am Honnete, a passionate software engineer.
-                        I specialize in building responsive web applications, python development, and shell scripting.
+                        I specialize in building responsive web applications, Machine Learning, python development, and shell scripting.
                     </p>
 
                     <div className="hero-actions">
