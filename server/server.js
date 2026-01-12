@@ -2,7 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const projectRoutes = require('./routes/projectRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+const connectDB = require('./config/db');
 require('dotenv').config();
+
+// Connect to Database
+connectDB();
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;

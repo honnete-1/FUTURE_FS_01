@@ -1,11 +1,11 @@
-const db = require('../config/db');
+const Project = require('../models/Project');
 
 exports.getProjects = async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT * FROM projects');
-        res.json(rows);
+        const projects = await Project.find();
+        res.json(projects);
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server Error fetching projects' });
+        console.error(err.message);
+        res.status(500).send('Server Error');
     }
 };

@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const Message = require('../models/Message');
 
 exports.submitContact = async (req, res) => {
     const { name, email, message } = req.body;
@@ -7,10 +7,16 @@ exports.submitContact = async (req, res) => {
     }
 
     try {
-        await db.query('INSERT INTO messages (name, email, message) VALUES (?, ?, ?)', [name, email, message]);
+        const newMessage = new Message({
+            name,
+            email,
+            message
+        });
+
+        await newMessage.save();
         res.status(201).json({ message: 'Message sent successfully' });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server Error saving message' });
+        console.error(err.message);
+        res.status(500).send('Server Error');
     }
 };
