@@ -1,18 +1,55 @@
-# React + Vite
+#  Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal developer portfolio built as **Task 1** for the [Future Intern Full Stack Web Development Internship](https://futureinterns.com/full-stack-web-development-task-1/).
 
-Currently, two official plugins are available:
+##  Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ [View Website](https://future-fs-01-qbtum3vqu-honnete-1s-projects.vercel.app/)
 
-## React Compiler
+##  Task Overview
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Build a **modern portfolio website** using React and Node.js
+- Store form submissions in a **MySQL database**
+- Backend handles user messages securely
 
-Note: This will impact Vite dev & build performances.
+##  Technologies Used
 
-## Expanding the ESLint configuration
+### Frontend
+- React (Vite)
+- Framer Motion
+- React Router DOM
+- Styled with custom CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend
+- Node.js + Express
+- MySQL (Relational Database)
+- CORS & dotenv
+
+### Deployment
+- Frontend: Vercel  
+- Backend: Render  
+- Database: MySQL (local or cloud-hosted)
+
+##  Features
+
+- Responsive and animated UI
+- Project showcase section
+- Contact form with database integration
+- Form validation
+- Dynamic rendering of project data
+
+##  Folder Structure
+/src
+/components
+/pages
+/server
+/routes
+/controllers
+/db
+
+##  What I Learned
+
+- Setting up a full stack environment (frontend + backend)
+- Handling form data and storing it in a SQL database
+- Deploying separate services and connecting them securely
+
