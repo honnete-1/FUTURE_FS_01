@@ -1,20 +1,20 @@
-# 🚀 Personal Portfolio Website
+# Personal Portfolio Website
 
 A modern, full-stack personal developer portfolio built with the **MERN Stack** (MongoDB, Express, React, Node.js). This project showcases my skills, projects, and provides a way for potential employers or clients to contact me directly.
 
 ![Project Preview](https://future-fs-01-lv5jyv77o-honnete-1s-projects.vercel.app/assets/project1.png)
 
-## 🌟 Features
+## Features
 
--   **🎨 Dynamic UI**: Built with React and Framer Motion for smooth animations and a premium feel.
--   **📱 Fully Responsive**: Optimized for desktops, tablets, and mobile devices.
--   **📂 Project Showcase**: Dynamically fetches and displays projects from a MongoDB database.
--   **📩 Contact Form**: Fully functional contact form that saves messages to the database.
--   **🚅 Fast & SEO Friendly**: Powered by Vite for lightning-fast development and performance.
+-   **Dynamic UI**: Built with React and Framer Motion for smooth animations and a premium feel.
+-   **Fully Responsive**: Optimized for desktops, tablets, and mobile devices.
+-   **Project Showcase**: Dynamically fetches and displays projects from a MongoDB database.
+-   **contact Form**: Fully functional contact form that saves messages to the database.
+-   **Fast & SEO Friendly**: Powered by Vite for lightning-fast development and performance.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 -   **React (Vite)**: Fast component-based UI development.
@@ -94,7 +94,7 @@ Follow these steps to run the project locally.
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 ### Projects
 -   **GET** `/api/projects`: Fetch all showcased projects.
