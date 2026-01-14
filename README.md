@@ -104,7 +104,7 @@ Follow these steps to run the project locally.
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Honnête** - [GitHub](https://github.com/honnete-1)
 
