@@ -20,6 +20,10 @@ const projectSchema = new mongoose.Schema({
     image_url: {
         type: String,
         required: true
+    },
+    demo_link: {
+        type: String,
+        required: false
     }
 });
 

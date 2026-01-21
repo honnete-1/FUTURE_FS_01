@@ -6,7 +6,7 @@ const connectDB = require('./config/db');
 require('dotenv').config();
 
 // Connect to Database
-connectDB();
+// Database connection is handled before server start
 
 
 const app = express();
@@ -29,11 +29,13 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-// Start Server
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
-}
+// Connect to Database and start server
+connectDB().then(() => {
+    if (process.env.NODE_ENV !== 'production') {
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
+    }
+});
 
 module.exports = app;

@@ -21,6 +21,7 @@ const seedProjects = [
         tech_stack: ['Shell Scripting', 'Linux Commands', 'Automation'],
         link: 'https://github.com/honnete-1/submission_reminder_app_honnete-1',
         image_url: '/assets/project1.png'
+        // No demo_link
     },
     {
         title: 'Personal Expense Tracker',
@@ -28,20 +29,23 @@ const seedProjects = [
         tech_stack: ['Python', 'CLI', 'Data Management'],
         link: 'https://github.com/honnete-1/Lab3-Personal-Expense-Tracker_honnete-1',
         image_url: '/assets/project2.png'
+        // No demo_link
     },
     {
         title: 'Mini Shop',
         description: 'Upcoming full stack development project.',
         tech_stack: ['In Development'],
         link: 'https://github.com/honnete-1/FUTURE_FS_02',
-        image_url: '/assets/project3.png'
+        image_url: '/assets/project3.png',
+        demo_link: 'https://futurefs02-iota.vercel.app/'
     },
     {
         title: 'Rebranded Website',
         description: 'Upcoming software solution.',
         tech_stack: ['In Development'],
         link: 'https://github.com/honnete-1/FUTURE_FS_03',
-        image_url: '/assets/project4.png'
+        image_url: '/assets/project4.png',
+        demo_link: 'https://futurefs03-sandy.vercel.app/'
     }
 ];
 

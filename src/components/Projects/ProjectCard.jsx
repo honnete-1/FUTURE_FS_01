@@ -28,9 +28,11 @@ export default function ProjectCard({ project }) {
                     <a href={project.codeLink} className="action-link" target="_blank" rel="noreferrer">
                         <FaGithub /> Code
                     </a>
-                    <a href={project.liveLink} className="action-link" target="_blank" rel="noreferrer">
-                        <FaExternalLinkAlt /> Live Demo
-                    </a>
+                    {project.liveLink && (
+                        <a href={project.liveLink} className="action-link" target="_blank" rel="noreferrer">
+                            <FaExternalLinkAlt /> Live Demo
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>

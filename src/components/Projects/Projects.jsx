@@ -31,7 +31,7 @@ export default function Projects() {
                     description: p.description,
                     tech: typeof p.tech_stack === 'string' ? JSON.parse(p.tech_stack) : p.tech_stack,
                     codeLink: p.link,
-                    liveLink: '#',
+                    liveLink: p.demo_link || '',  // Use demo_link from backend, or empty string
                     image: p.image_url
                 }));
                 setProjects(mapped);
