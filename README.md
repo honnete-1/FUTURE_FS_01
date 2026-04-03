@@ -2,7 +2,7 @@
 
 A modern, full-stack personal developer portfolio built with the **MERN Stack** (MongoDB, Express, React, Node.js). This project showcases my skills, projects, and provides a way for potential employers or clients to contact me directly.
 
-**Live Demo:** https://future-fs-01-qbtum3vqu-honnete-1s-projects.vercel.app/
+**Live Demo:** https://resume.honnete.tech/
 ## Features
 
 -   **Dynamic UI**: Built with React and Framer Motion for smooth animations and a premium feel.
